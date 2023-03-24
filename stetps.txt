@@ -1,0 +1,30 @@
+UseEffect:
+
+    Casos de Uso:
+
+        useEffect(() => {})
+
+            Se ejecuta al:
+
+                -Renderizar por primera vez
+                -Cada vez que ocurra un cambio el cualquier estado
+        
+        useEffect(() => {}, [])
+
+            Se ejecuta al:
+                - Renderizar por primera vez
+        
+        useEffect(() => {}, [state1])
+
+            Se ejecuta al:
+                - Al renderizar por primera vez
+                - Cada vez que ocurra un cambio en state1
+        
+        useEffect(() => {
+            if(!!state1) {
+                ....
+            }
+        }, [state1])
+
+            Se ejecuta al:
+                - Cada vez que ocurra un cambio en state1
