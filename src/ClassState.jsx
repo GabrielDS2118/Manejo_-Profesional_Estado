@@ -1,10 +1,12 @@
 import React from 'react';
 import { Loading } from './Loading';
 
+const SECURITY_CODE = 'ultrasecreto';
 class ClassState extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      value: '',
       error: false,
       loading: false,
     };
@@ -23,7 +25,11 @@ class ClassState extends React.Component {
 
     if (!!this.state.loading) {
       setTimeout(() => {
-        this.setState({ loading: false });
+        if (this.state.value === SECURITY_CODE) {
+          this.setState({ error: false, loading: false });
+        } else {
+          this.setState({ error: true, loading: false });
+        }
       }, 3000);
     }
   }
@@ -34,13 +40,23 @@ class ClassState extends React.Component {
         <h2>Eliminar {this.props.name}</h2>
         <p>Código de seguridad</p>
         {this.state.error && <p>Error: el código es incorrecto</p>}
-        <input type="text" placeholder="Código de Seguridad" />
-        <button onClick={() => this.setState({ error: !this.state.error })}>
-          Comprobar
-        </button>
+        <input
+          type="text"
+          placeholder="Código de Seguridad"
+          // value={this.state.value}
+          onChange={(e) => {
+            this.setState({ value: e.target.value });
+          }}
+        />
 
         {this.state.loading && <Loading />}
-        <button onClick={() => this.setState({ loading: true })}>Cargar</button>
+        <button
+          onClick={() => {
+            this.setState({ error: false, loading: true });
+          }}
+        >
+          Comprobar
+        </button>
       </div>
     );
   }
