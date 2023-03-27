@@ -27,4 +27,11 @@ UseEffect:
         }, [state1])
 
             Se ejecuta al:
-                - Cada vez que ocurra un cambio en state1
+                - Cada vez que ocurra un cambio en state1 y este sea true
+
+
+Métodos del ciclo de vida en React.Component
+    ComponentWillMount() -> Antes que se monte 
+    componentDidMount() -> Una vez que se monte 
+    componenteUnMount() -> Cuando se desmonte
+    componentDipUpdate() -> Al actualizarse un state
