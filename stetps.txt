@@ -35,3 +35,8 @@ Métodos del ciclo de vida en React.Component
     componentDidMount() -> Una vez que se monte 
     componenteUnMount() -> Cuando se desmonte
     componentDipUpdate() -> Al actualizarse un state
+
+
+Estados simples o independientes
+    Cuando la accion del usuario requiera actualizar varios Estados
+    se deben llamar las funcions setValue en bloque
