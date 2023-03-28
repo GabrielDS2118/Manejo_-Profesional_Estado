@@ -40,3 +40,6 @@ Métodos del ciclo de vida en React.Component
 Estados simples o independientes
     Cuando la accion del usuario requiera actualizar varios Estados
     se deben llamar las funcions setValue en bloque
+
+Imperativo y Declaritvo:
+    Imperativo -> Describir muy detalladamente el paso a paso 
