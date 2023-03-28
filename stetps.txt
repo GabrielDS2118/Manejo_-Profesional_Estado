@@ -43,3 +43,4 @@ Estados simples o independientes
 
 Imperativo y Declaritvo:
     Imperativo -> Describir muy detalladamente el paso a paso 
+    Declarativo -> Funciones generales
